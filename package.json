@@ -7,13 +7,13 @@
     "node": ">=20.9.0"
   },
   "scripts": {
-    "dev": "pnpm --filter @azable/web dev",
-    "build": "pnpm --filter @azable/web build",
-    "build:contracts": "cd contracts && cargo build --release",
+    "dev": "node init && pnpm --filter @azable/web dev",
+    "build": "node init && pnpm --filter @azable/web build",
+    "build:contracts": "node init && cd contracts && cargo build --release",
     "generate:sdk": "pnpm --filter @azable/sdk generate",
     "test:contracts": "cd contracts && cargo test",
-    "dev:backend": "cd services/backend && cargo run",
-    "build:backend": "cd services/backend && cargo build --release",
+    "dev:backend": "node init && cd services/backend && cargo run",
+    "build:backend": "node init && cd services/backend && cargo build --release",
     "test:backend": "cd services/backend && cargo test",
     "test:sdk": "pnpm --filter @azable/sdk test",
     "test:sdk:coverage": "pnpm --filter @azable/sdk test:coverage",
